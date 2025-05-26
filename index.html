@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GadgetGuru - Products</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom, #8360c3, #2ebf91);
+      margin: 0;
+      padding: 20px;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .container {
+      max-width: 500px;
+      width: 100%;
+      text-align: center;
+    }
+
+    .profile-img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #fff;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      margin-bottom: 10px;
+      font-size: 28px;
+    }
+
+    p {
+      margin-bottom: 20px;
+    }
+
+    #searchInput {
+      padding: 10px 15px;
+      border-radius: 10px;
+      border: none;
+      width: 100%;
+      max-width: 400px;
+      margin-bottom: 20px;
+      font-size: 16px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .card {
+      background: white;
+      color: black;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      margin: 15px 0;
+      overflow: hidden;
+      text-align: left;
+      transition: transform 0.2s;
+    }
+
+    .card:hover {
+      transform: scale(1.02);
+    }
+
+    .card a {
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: row;
+    }
+
+    .card img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+
+    .card-content {
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .card-title {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    @media screen and (max-width: 500px) {
+      .card a {
+        flex-direction: column;
+      }
+
+      .card img {
+        width: 100%;
+        height: auto;
+      }
+
+      #searchInput {
+        font-size: 15px;
+      }
+    }
+
+    footer {
+      margin-top: 40px;
+      font-size: 14px;
+      opacity: 0.7;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="img/a1111.jpg" alt="GadgetGuru" class="profile-img" />
+    <h1>GadgetGuru</h1>
+    <p>Shop our top tech picks 💡🔌</p>
+
+    <input type="text" id="searchInput" placeholder="Search products..." onkeyup="filterCards()" />
+
+    <!-- Product 1 -->
+    <div class="card">
+      <a href="https://example.com/product1" target="_blank">
+        <img src="img/shopping.webp" alt="Wireless Earbuds" />
+        <div class="card-content">
+          <div class="card-title">Air cooler</div>
+          <div>Crystal-clear audio and long battery life.</div>
+        </div>
+      </a>
+    </div>
+
+    <!-- Product 2 -->
+   
+
+    <!-- Product 3 -->
+   
+
+    <footer>
+      © 2025 GadgetGuru. All rights reserved.
+    </footer>
+  </div>
+
+  <script>
+    function filterCards() {
+      const input = document.getElementById('searchInput').value.toLowerCase();
+      const cards = document.querySelectorAll('.card');
+      cards.forEach(card => {
+        const title = card.querySelector('.card-title').innerText.toLowerCase();
+        if (title.includes(input)) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+  </script>
+</body>
+</html>
